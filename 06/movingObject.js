@@ -24,8 +24,8 @@ MovingObject.prototype = {
     setOldCenterY: function(y) { this.y_old = y    - this.height * 0.5; },
     setOldLeft   : function(x) { this.x_old = x;                        },
     setOldRight  : function(x) { this.x_old = x    - this.width;        },
-    setOldTop    : function(y) { this.y_old = y;                        }
-
+    setOldTop    : function(y) { this.y_old = y;                        },
+    //virtual hitBottom: function(){}
 };
 Object.assign(MovingObject.prototype, Game.Object.prototype);
 MovingObject.prototype.constructor = MovingObject;

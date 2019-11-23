@@ -1,10 +1,16 @@
 //Game.Player.prototype.constructor = Game.Player;
+let MAX_JUMPS = 2;
+let JUMP_VELOCITIES = {
+    0: 13,
+    1: 10
+};
 function Player(x, y) {
 
     MovingObject.call(this, x, y, 7, 12);
     Animator.call(this, Player.prototype.frame_sets["idle-left"], 10);
 
     this.jumping     = true;
+    this.njumps = 0;
     this.direction_x = -1;
     this.velocity_x  = 0;
     this.velocity_y  = 0;
@@ -15,24 +21,25 @@ Player.prototype = {
     frame_sets: {
 
         "idle-left" : [0],
+        "idle-right": [6],
         "jump-left" : [1],
         "move-left" : [2, 3, 4, 5],
-        "idle-right": [6],
         "jump-right": [7],
         "move-right": [8, 9, 10, 11]
 
     },
 
     jump: function() {
-
         /* Made it so you can only jump if you aren't falling faster than 10px per frame. */
-        if (!this.jumping && this.velocity_y < 10) {
-
+        if (this.velocity_y < 10 && this.njumps<MAX_JUMPS) {
             this.jumping     = true;
-            this.velocity_y -= 13;
-
+            this.velocity_y -= JUMP_VELOCITIES[this.njumps];
+            this.njumps += 1;
         }
-
+    },
+    hitBottom: function(){
+        this.jumping = false;
+        this.njumps = 0;
     },
 
     moveLeft: function() {
@@ -52,12 +59,12 @@ Player.prototype = {
             if (this.direction_x < 0) this.changeFrameSet(this.frame_sets["jump-left"], "pause");
             else this.changeFrameSet(this.frame_sets["jump-right"], "pause");
 
-        } else if (this.direction_x < 0) {
+        } else if (this.direction_x < 0) { //Going left
 
             if (this.velocity_x < -0.1) this.changeFrameSet(this.frame_sets["move-left"], "loop", 5);
             else this.changeFrameSet(this.frame_sets["idle-left"], "pause");
 
-        } else if (this.direction_x > 0) {
+        } else if (this.direction_x > 0) { //Going right
 
             if (this.velocity_x > 0.1) this.changeFrameSet(this.frame_sets["move-right"], "loop", 5);
             else this.changeFrameSet(this.frame_sets["idle-right"], "pause");

@@ -33,10 +33,7 @@ window.addEventListener("load", function (event) {
     ///////////////////
     //// FUNCTIONS ////
     ///////////////////
-
-
     var render = function () {
-
         display.drawMap(assets_manager.tile_set_image,
             game.world.tile_set.columns, game.world.graphical_map, game.world.columns, game.world.tile_set.tile_size);
 
@@ -46,9 +43,7 @@ window.addEventListener("load", function (event) {
             frame.x, frame.y,
             game.world.player.x + Math.floor(game.world.player.width * 0.5 - frame.width * 0.5) + frame.offset_x,
             game.world.player.y + frame.offset_y, frame.width, frame.height);
-
         display.render();
-
     };
 
     var update = function () {
@@ -62,15 +57,12 @@ window.addEventListener("load", function (event) {
             game.world.player.jump();
             controller.up.active = false;
         }
-
         game.update();
-
         /* This if statement checks to see if a door has been selected by the player.
         If the player collides with a door, he selects it. The engine is then stopped
         and the assets_manager loads the door's level. */
         if (game.world.door) {
             engine.stop();
-
             /* Here I'm requesting the JSON file to use to populate the game.world object. */
             let zoneurl = ZONES_PREFIX + game.world.door.destination_zone + ZONE_SUFFIX;
             assets_manager.requestJSON(zoneurl, (zone) => {
@@ -84,23 +76,21 @@ window.addEventListener("load", function (event) {
     //// OBJECTS ////
     /////////////////
 
-    var assets_manager = new AssetsManager();
-    var controller = new Controller();
-    var display = new Display(document.querySelector("canvas"));
-    var game = new Game();
-    var engine = new Engine(1000 / fps, render, update);
+    const assets_manager = new AssetsManager();
+    const controller = new Controller();
+    const game = new Game();
+    const engine = new Engine(1000 / fps, render, update);
+    const display = new Display(document.querySelector("canvas"),{
+        world: game.getWorld()
+    });
 
     ////////////////////
     //// INITIALIZE ////
     ////////////////////
-
-    display.buffer.canvas.height = game.world.height;
-    display.buffer.canvas.width = game.world.width;
-    display.buffer.imageSmoothingEnabled = false;
-
-    assets_manager.requestJSON(ZONES_PREFIX + game.world.zone_id + ZONE_SUFFIX, (zone) => {
+    const zoneurl = ZONES_PREFIX + game.world.zone_id + ZONE_SUFFIX;
+    assets_manager.requestJSON(zoneurl, (zone) => {
         game.world.setup(zone);
-        assets_manager.requestImage("rabbit-trap.png", (image) => {
+        assets_manager.requestImage(zone.image, (image) => {
             assets_manager.tile_set_image = image;
             resize();
             engine.start();

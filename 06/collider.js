@@ -88,14 +88,16 @@ Collider.prototype = {
     collidePlatformTop:function(object, tile_top) {
 
         if (object.getBottom() > tile_top && object.getOldBottom() <= tile_top) {
-
             object.setBottom(tile_top - 0.01);
             object.velocity_y = 0;
             object.jumping    = false;
+            object.hitBottom();
             return true;
 
         } return false;
 
     }
+
+
 
 };

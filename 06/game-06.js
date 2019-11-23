@@ -28,7 +28,10 @@ const Game = function() {
   };
 
 };
-Game.prototype = { constructor : Game };
+Game.prototype = {
+  constructor : Game,
+  getWorld: function(){ return this.world; }
+};
 
 
 Game.Frame = function(x, y, width, height, offset_x, offset_y) {

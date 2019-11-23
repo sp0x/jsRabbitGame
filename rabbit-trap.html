@@ -18,13 +18,7 @@
     <p>menu</p>
     <div id="menu-list">
         <br>
-        <a href="rabbit-trap.html?01">part1</a>
-        <a href="rabbit-trap.html?02">part2</a>
-        <a href="rabbit-trap.html?03">part3</a>
-        <a href="rabbit-trap.html?04">part4</a>
-        <a href="rabbit-trap.html?05">part5</a>
         <a href="rabbit-trap.html?06">part6</a>
-        <a href="rabbit-trap.html?07">part7</a>
     </div>
 </div>
 
@@ -40,7 +34,7 @@ js file containing the game logic for each part based on url parameters. -->
     let parts = {
         "06": [
             "06/controller-02.js",
-            "06/display-05.js",
+            "06/display.js",
             "06/engine-06.js",
             "06/game-06.js",
             "06/main-06.js",
@@ -52,27 +46,13 @@ js file containing the game logic for each part based on url parameters. -->
             "06/player.js",
         ]
     };
-
-    switch (part) {
-        case "01":
-        case "02":
-        case "03":
-        case "04":
-        case "05":
-        case "06":
-        case "07":
-            break;
-        default:
-            part = "06";
-    }
-
+    part = "06";
     for (let index = 0; index < parts[part].length; index++) {
         let script = document.createElement("script");
         script.setAttribute("type", "text/javascript");
         script.setAttribute("src", parts[part][index]);
         document.head.appendChild(script);
     }
-
     let menu = document.getElementById("menu");
     let menu_list = document.getElementById("menu-list");
     menu.addEventListener("click", function (event) {
