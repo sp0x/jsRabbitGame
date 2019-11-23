@@ -4,7 +4,7 @@ const AssetsManager = function() {
 
 AssetsManager.prototype = {
 
-    constructor: Game.AssetsManager,
+    constructor: AssetsManager,
 
     /* Requests a file and hands the callback function the contents of that file
     parsed by JSON.parse. */

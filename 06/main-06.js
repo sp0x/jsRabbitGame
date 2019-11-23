@@ -23,6 +23,7 @@ window.addEventListener("load", function (event) {
     the 06 folder because I won't be using these levels again in future parts. */
     const ZONES_PREFIX = "06/zone";
     const ZONE_SUFFIX = ".json";
+    const fps = 30
 
     /////////////////
     //// CLASSES ////
@@ -51,7 +52,6 @@ window.addEventListener("load", function (event) {
     };
 
     var update = function () {
-
         if (controller.left.active) {
             game.world.player.moveLeft();
         }
@@ -88,7 +88,7 @@ window.addEventListener("load", function (event) {
     var controller = new Controller();
     var display = new Display(document.querySelector("canvas"));
     var game = new Game();
-    var engine = new Engine(1000 / 30, render, update);
+    var engine = new Engine(1000 / fps, render, update);
 
     ////////////////////
     //// INITIALIZE ////

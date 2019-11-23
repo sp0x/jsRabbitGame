@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebc5afb1-ec0d-4570-9e55-3113480e5017" name="Default Changelist" comment="" />
+    <list default="true" id="ebc5afb1-ec0d-4570-9e55-3113480e5017" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06/animator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06/collider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06/movingObject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06/player.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06/world.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/controller-01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/display-01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/engine-01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/game-01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01/main-01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02/display-02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02/game-02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02/main-02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/display-03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/game-03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/main-03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04/display-04.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04/game-04.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05/game-05.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05/main-05.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/06/assetManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/06/assetManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06/game-06.js" beforeDir="false" afterPath="$PROJECT_DIR$/06/game-06.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06/main-06.js" beforeDir="false" afterPath="$PROJECT_DIR$/06/main-06.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06/zone00.json" beforeDir="false" afterPath="$PROJECT_DIR$/06/zone00.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07/game-07.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/07/main-07.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/07/zone00.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbit-trap.html" beforeDir="false" afterPath="$PROJECT_DIR$/rabbit-trap.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,26 +54,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rabbit-trap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/06/main-06.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+            <state relative-caret-position="365">
+              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06/assetManager.js">
+        <entry file="file://$PROJECT_DIR$/06/main-06.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="901">
+              <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -50,32 +72,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/06/game-06.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+            <state relative-caret-position="163">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
-                <element signature="e#5245#6299#0" />
-                <element signature="e#6365#6519#0" />
-                <element signature="e#6618#6704#0" />
-                <element signature="e#6795#7619#0" />
-                <element signature="e#7691#7959#0" />
-                <element signature="e#8056#8936#0" />
-                <element signature="e#9094#9304#0" />
-                <element signature="e#9328#9676#0" />
-                <element signature="e#9812#10042#0" />
-                <element signature="e#10068#11907#0" />
-                <element signature="e#12133#12798#0" />
-                <element signature="e#12909#13505#0" />
-                <element signature="e#13530#17537#0" />
+                <element signature="e#8163#8828#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06/zone00.json">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/06/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="34">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/06/movingObject.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/06/world.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -86,17 +114,32 @@
     <findStrings>
       <find>rabbit-trap.png</find>
       <find>keyDownUp</find>
-      <find>AssetsManager</find>
       <find>ZONES_PREFIX</find>
+      <find>world</find>
+      <find>Game.Colli</find>
+      <find>Collider</find>
+      <find>AssetsManager</find>
+      <find>player</find>
+      <find>Player</find>
+      <find>MovingObject</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/06/zone00.json" />
-        <option value="$PROJECT_DIR$/rabbit-trap.html" />
+        <option value="$PROJECT_DIR$/06/collider.js" />
         <option value="$PROJECT_DIR$/06/assetManager.js" />
         <option value="$PROJECT_DIR$/06/main-06.js" />
+        <option value="$PROJECT_DIR$/06/world.js" />
+        <option value="$PROJECT_DIR$/06/animator.js" />
+        <option value="$PROJECT_DIR$/06/game-06.js" />
+        <option value="$PROJECT_DIR$/06/movingObject.js" />
+        <option value="$PROJECT_DIR$/rabbit-trap.html" />
+        <option value="$PROJECT_DIR$/06/player.js" />
       </list>
     </option>
   </component>
@@ -106,6 +149,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -123,16 +167,6 @@
             <path>
               <item name="jsgame" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsgame" type="462c0819:PsiDirectoryNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsgame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsgame" type="462c0819:PsiDirectoryNode" />
-              <item name="05" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsgame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsgame" type="462c0819:PsiDirectoryNode" />
               <item name="06" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -142,6 +176,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -185,12 +220,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574526024497</updated>
-      <workItem from="1574526030041" duration="1590000" />
+      <workItem from="1574526030041" duration="3132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1590000" />
+    <option name="totallyTimeSpent" value="3132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -233,53 +268,79 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/06/script.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/06/zone00.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rabbit-trap.html">
+    <entry file="file://$PROJECT_DIR$/06/collider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/06/game-06.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-          <folding>
-            <element signature="e#5245#6299#0" />
-            <element signature="e#6365#6519#0" />
-            <element signature="e#6618#6704#0" />
-            <element signature="e#6795#7619#0" />
-            <element signature="e#7691#7959#0" />
-            <element signature="e#8056#8936#0" />
-            <element signature="e#9094#9304#0" />
-            <element signature="e#9328#9676#0" />
-            <element signature="e#9812#10042#0" />
-            <element signature="e#10068#11907#0" />
-            <element signature="e#12133#12798#0" />
-            <element signature="e#12909#13505#0" />
-            <element signature="e#13530#17537#0" />
-          </folding>
+        <state relative-caret-position="-680">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/06/assetManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="-75">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06/world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06/animator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/06/main-06.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        <state relative-caret-position="901">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06/game-06.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#8163#8828#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06/movingObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rabbit-trap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
