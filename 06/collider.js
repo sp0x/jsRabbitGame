@@ -72,6 +72,7 @@ Collider.prototype = {
 
             object.setTop(tile_bottom);
             object.velocity_y = 0;
+            object.hitTop();
             return true;
 
         } return false;
@@ -84,6 +85,7 @@ Collider.prototype = {
 
             object.setRight(tile_left - 0.01);
             object.velocity_x = 0;
+            object.hitRight();
             return true;
 
         } return false;
@@ -96,6 +98,7 @@ Collider.prototype = {
 
             object.setLeft(tile_right);
             object.velocity_x = 0;
+            object.hitLeft();
             return true;
 
         } return false;

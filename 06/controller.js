@@ -2,7 +2,7 @@
 
 /* The keyDownUp handler was moved to the main file. */
 
-const Controller = function() {
+const Controller = function(config) {
 
   this.left  = new Controller.ButtonInput();
   this.right = new Controller.ButtonInput();
@@ -14,9 +14,9 @@ const Controller = function() {
 
     switch(key_code) {
 
-      case 37: this.left.getInput(down);  break;
-      case 38: this.up.getInput(down);    break;
-      case 39: this.right.getInput(down);
+      case config['left']: this.left.setInput(down);  break;
+      case config['up']: this.up.setInput(down);    break;
+      case config['right']: this.right.setInput(down);
 
     }
 
@@ -40,7 +40,7 @@ Controller.ButtonInput.prototype = {
 
   constructor : Controller.ButtonInput,
 
-  getInput : function(down) {
+  setInput : function(down) {
 
     if (this.down != down) this.active = down;
     this.down = down;

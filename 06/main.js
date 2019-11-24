@@ -23,7 +23,12 @@ window.addEventListener("load", function (event) {
     the 06 folder because I won't be using these levels again in future parts. */
     const ZONES_PREFIX = "06/zone";
     const ZONE_SUFFIX = ".json";
-    const fps = 30
+    const fps = 30;
+    const CONTROLS = {
+        'left': 37,
+        'up': 38,
+        'right': 39
+    };
 
     /////////////////
     //// CLASSES ////
@@ -37,22 +42,16 @@ window.addEventListener("load", function (event) {
         display.drawMap(assets_manager.tile_set_image,
             game.world.tile_set.columns, game.world.graphical_map, game.world.columns, game.world.tile_set.tile_size);
 
-        let pf = game.world.player.frame_value;
+        let pf = p1.frame_value;
         let frame = game.world.tile_set.frames[pf];
         display.drawObject(assets_manager.tile_set_image,
             frame.x, frame.y,
-            game.world.player.x + Math.floor(game.world.player.width * 0.5 - frame.width * 0.5) + frame.offset_x,
-            game.world.player.y + frame.offset_y, frame.width, frame.height);
+            p1.x + Math.floor(p1.width * 0.5 - frame.width * 0.5) + frame.offset_x,
+            p1.y + frame.offset_y, frame.width, frame.height);
         display.render();
     };
 
-    var update = function () {
-        if (controller.left.active) game.world.player.moveLeft();
-        if (controller.right.active) game.world.player.moveRight();
-        if (controller.up.active) {
-            game.world.player.jump();
-            controller.up.active = false;
-        }
+    const update = function () {
         game.update();
         /* This if statement checks to see if a door has been selected by the player.
         If the player collides with a door, he selects it. The engine is then stopped
@@ -73,10 +72,13 @@ window.addEventListener("load", function (event) {
     /////////////////
 
     const assets_manager = new AssetsManager();
-    const controller = new Controller();
     const game = new Game();
+    const p1 = new Player(32, 76,{
+        controller: new Controller(CONTROLS)
+    });
+    game.addPlayer(p1);
     const engine = new Engine(1000 / fps, render, update);
-    const display = new Display(document.querySelector("canvas"),{
+    const display = new Display(document.querySelector("canvas"), {
         world: game.getWorld()
     });
 
@@ -96,7 +98,7 @@ window.addEventListener("load", function (event) {
 
     //On key up
     var keyDownUp = function (event) {
-        controller.keyDownUp(event.type, event.keyCode);
+        p1.controller.keyDownUp(event.type, event.keyCode);
     };
     //On window resize
     var resize = function (event) {
