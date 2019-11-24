@@ -41,11 +41,8 @@ Animator.prototype = {
         this.count ++;
 
         while(this.count > this.delay) {
-
             this.count -= this.delay;
-
             this.frame_index = (this.frame_index < this.frame_set.length - 1) ? this.frame_index + 1 : 0;
-
             this.frame_value = this.frame_set[this.frame_index];
 
         }

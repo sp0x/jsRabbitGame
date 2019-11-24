@@ -65,7 +65,7 @@ World.prototype = {
         this.collision_map      = zone.collision_map;
         this.columns            = zone.columns;
         this.rows               = zone.rows;
-        this.doors              = new Array();
+        this.doors              = [];
         this.zone_id            = zone.id;
 
         /* Generate new doors. */
@@ -113,19 +113,12 @@ World.prototype = {
         if the player is colliding with any. If he does collide with one, we set the
         world's door variable equal to that door, so we know to use it to load the next zone. */
         for(let index = this.doors.length - 1; index > -1; -- index) {
-
             let door = this.doors[index];
-
             if (door.collideObject(this.player)) {
-
                 this.door = door;
-
-            };
-
+            }
         }
-
         this.player.updateAnimation();
-
     }
 
 };

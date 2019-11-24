@@ -35,14 +35,12 @@ Game.prototype = {
 
 
 Game.Frame = function(x, y, width, height, offset_x, offset_y) {
-
   this.x        = x;
   this.y        = y;
   this.width    = width;
   this.height   = height;
   this.offset_x = offset_x;
   this.offset_y = offset_y;
-
 };
 Game.Frame.prototype = { constructor: Game.Frame };
 
@@ -102,8 +100,6 @@ Game.Door.prototype = {
 };
 Object.assign(Game.Door.prototype, Game.Object.prototype);
 Game.Door.prototype.constructor = Game.Door;
-
-
 
 
 Game.TileSet = function(columns, tile_size) {

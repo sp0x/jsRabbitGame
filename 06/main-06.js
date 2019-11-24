@@ -37,8 +37,8 @@ window.addEventListener("load", function (event) {
         display.drawMap(assets_manager.tile_set_image,
             game.world.tile_set.columns, game.world.graphical_map, game.world.columns, game.world.tile_set.tile_size);
 
-        let frame = game.world.tile_set.frames[game.world.player.frame_value];
-
+        let pf = game.world.player.frame_value;
+        let frame = game.world.tile_set.frames[pf];
         display.drawObject(assets_manager.tile_set_image,
             frame.x, frame.y,
             game.world.player.x + Math.floor(game.world.player.width * 0.5 - frame.width * 0.5) + frame.offset_x,
@@ -47,12 +47,8 @@ window.addEventListener("load", function (event) {
     };
 
     var update = function () {
-        if (controller.left.active) {
-            game.world.player.moveLeft();
-        }
-        if (controller.right.active) {
-            game.world.player.moveRight();
-        }
+        if (controller.left.active) game.world.player.moveLeft();
+        if (controller.right.active) game.world.player.moveRight();
         if (controller.up.active) {
             game.world.player.jump();
             controller.up.active = false;

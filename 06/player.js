@@ -53,7 +53,8 @@ Player.prototype = {
     },
 
     updateAnimation:function() {
-
+        let fs_left = this.frame_sets["move-left"];
+        let fs_right = this.frame_sets["move-right"];
         if (this.velocity_y < 0) {
 
             if (this.direction_x < 0) this.changeFrameSet(this.frame_sets["jump-left"], "pause");
@@ -61,12 +62,12 @@ Player.prototype = {
 
         } else if (this.direction_x < 0) { //Going left
 
-            if (this.velocity_x < -0.1) this.changeFrameSet(this.frame_sets["move-left"], "loop", 5);
+            if (this.velocity_x < -0.1) this.changeFrameSet(fs_left, "loop", 5);
             else this.changeFrameSet(this.frame_sets["idle-left"], "pause");
 
         } else if (this.direction_x > 0) { //Going right
 
-            if (this.velocity_x > 0.1) this.changeFrameSet(this.frame_sets["move-right"], "loop", 5);
+            if (this.velocity_x > 0.1) this.changeFrameSet(fs_right, "loop", 5);
             else this.changeFrameSet(this.frame_sets["idle-right"], "pause");
 
         }
