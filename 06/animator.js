@@ -1,12 +1,11 @@
-function Animator(frame_set, delay) {
+function Animator(frame_set, delay, mode="loop") {
 
     this.count       = 0;
     this.delay       = (delay >= 1) ? delay : 1;
     this.frame_set   = frame_set;
     this.frame_index = 0;
     this.frame_value = frame_set[0];
-    this.mode        = "pause";
-
+    this.mode        = mode;
 };
 Animator.prototype = {
 
@@ -23,7 +22,7 @@ Animator.prototype = {
 
     },
 
-    changeFrameSet(frame_set, mode, delay = 10, frame_index = 0) {
+    setFrameSet(frame_set, mode, delay = 10, frame_index = 0) {
 
         if (this.frame_set === frame_set) { return; }
 
@@ -44,7 +43,6 @@ Animator.prototype = {
             this.count -= this.delay;
             this.frame_index = (this.frame_index < this.frame_set.length - 1) ? this.frame_index + 1 : 0;
             this.frame_value = this.frame_set[this.frame_index];
-
         }
 
     }

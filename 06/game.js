@@ -44,8 +44,8 @@ Game.Frame = function (x, y, width, height, offset_x, offset_y) {
     this.y = y;
     this.width = width;
     this.height = height;
-    this.offset_x = offset_x;
-    this.offset_y = offset_y;
+    this.offset_x = offset_x || 0;
+    this.offset_y = offset_y || 0;
 };
 Game.Frame.prototype = {constructor: Game.Frame};
 
@@ -97,6 +97,23 @@ Game.Object.prototype = {
     },
     setTop: function (y) {
         this.y = y;
+    },
+    collideObject : function(o){
+        if(this.getRight() < o.getLeft() ||
+            this.getBottom() < o.getTop() ||
+            this.getLeft() > o.getRight() ||
+            this.getTop() > o.getBottom()){
+            return false;
+        }
+        return true;
+    },
+    //Does rect collision detection with the centerpoint of the object
+    collideObjectCenter : function(o){
+        let cx = o.getCenterX();
+        let cy = o.getCenterY();
+        if(cx< this.getLeft() || cx>this.getRight() ||
+        cy < this.getTop() || cy>this.getBottom()) return false;
+        return true;
     }
 
 };
@@ -138,12 +155,24 @@ Game.TileSet = function (columns, tile_size) {
 
     let f = Game.Frame;
 
-    this.frames = [new f(115, 96, 13, 16, 0, -4), // idle-left
-        new f(50, 96, 13, 16, 0, -4), // jump-left
-        new f(102, 96, 13, 16, 0, -4), new f(89, 96, 13, 16, 0, -4), new f(76, 96, 13, 16, 0, -4), new f(63, 96, 13, 16, 0, -4), // walk-left
-        new f(0, 112, 13, 16, 0, -4), // idle-right
-        new f(65, 112, 13, 16, 0, -4), // jump-right
-        new f(13, 112, 13, 16, 0, -4), new f(26, 112, 13, 16, 0, -4), new f(39, 112, 13, 16, 0, -4), new f(52, 112, 13, 16, 0, -4) // walk-right
+    let w = 13;
+    let h = 16;
+    // this.frames = [new f(115, 96, w, h, 0, -4), // idle-left
+    //     new f(50, 96, w, h, 0, -4), // jump-left
+    //     new f(102, 96, w, h, 0, -4), new f(89, 96, w, h, 0, -4), new f(76, 96, w, h, 0, -4), new f(63, 96, w, h, 0, -4), // walk-left
+    //     new f(0, 112, w, h, 0, -4), // idle-right
+    //     new f(65, 112, w, h, 0, -4), // jump-right
+    //     new f(w, 112, w, h, 0, -4), new f(26, 112, w, h, 0, -4), new f(39, 112, w, h, 0, -4), new f(52, 112, w, h, 0, -4), // walk-right
+    //     new f(w, 112, w, h, 0, -4) // carrot
+    // ];
+    this.frames = [new f(115,  96, 13, 16, 0, -4), // idle-left
+        new f( 50,  96, 13, 16, 0, -4), // jump-left
+        new f(102,  96, 13, 16, 0, -4), new f(89, 96, 13, 16, 0, -4), new f(76, 96, 13, 16, 0, -4), new f(63, 96, 13, 16, 0, -4), // walk-left
+        new f(  0, 112, 13, 16, 0, -4), // idle-right
+        new f( 65, 112, 13, 16, 0, -4), // jump-right
+        new f( 13, 112, 13, 16, 0, -4), new f(26, 112, 13, 16, 0, -4), new f(39, 112, 13, 16, 0, -4), new f(52, 112, 13, 16, 0, -4), // walk-right
+        new f( 81, 112, 14, 16), new f(96, 112, 16, 16), // carrot
+        new f(112, 115, 16,  4), new f(112, 124, 16, 4), new f(112, 119, 16, 4) // grass
     ];
 
 };

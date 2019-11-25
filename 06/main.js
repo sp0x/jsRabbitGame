@@ -38,21 +38,37 @@ window.addEventListener("load", function (event) {
     ///////////////////
     //// FUNCTIONS ////
     ///////////////////
-    var render = function () {
+    const render = function () {
+        let ts = game.world.tile_set;
         display.drawMap(assets_manager.tile_set_image,
-            game.world.tile_set.columns, game.world.graphical_map, game.world.columns, game.world.tile_set.tile_size);
+            ts.columns, game.world.graphical_map, game.world.columns, ts.tile_size);
+        let frame = undefined;
 
-        let pf = p1.frame_value;
-        let frame = game.world.tile_set.frames[pf];
+        for(let i=0; i<game.world.carrots.length; i++){
+            let c = game.world.carrots[i];
+            frame = ts.frames[c.frame_value];
+            //console.log("Carrot f: ", frame.x, frame.y, frame.offset_y, frame.offset_x, frame.width, frame.height);
+            display.drawObject(assets_manager.tile_set_image,
+                frame.x, frame.y,
+                c.x + Math.floor(c.width * 0.5 - frame.width * 0.5) + frame.offset_x,
+                c.y + frame.offset_y, frame.width, frame.height);
+        }
+
+        frame = ts.frames[player1.frame_value];
+        //console.log("Player loc: ", player1.x, player1.y);
         display.drawObject(assets_manager.tile_set_image,
             frame.x, frame.y,
-            p1.x + Math.floor(p1.width * 0.5 - frame.width * 0.5) + frame.offset_x,
-            p1.y + frame.offset_y, frame.width, frame.height);
+            player1.x + Math.floor(player1.width * 0.5 - frame.width * 0.5) + frame.offset_x,
+            player1.y + frame.offset_y, frame.width, frame.height);
+
+
         display.render();
     };
+    let carrotElem = document.querySelector("#carrotCounter");
 
     const update = function () {
         game.update();
+        carrotElem.innerHTML = "Carrots: " + player1.carrot_count;
         /* This if statement checks to see if a door has been selected by the player.
         If the player collides with a door, he selects it. The engine is then stopped
         and the assets_manager loads the door's level. */
@@ -73,10 +89,10 @@ window.addEventListener("load", function (event) {
 
     const assets_manager = new AssetsManager();
     const game = new Game();
-    const p1 = new Player(32, 76,{
+    const player1 = new Player(32, 76,{
         controller: new Controller(CONTROLS)
     });
-    game.addPlayer(p1);
+    game.addPlayer(player1);
     const engine = new Engine(1000 / fps, render, update);
     const display = new Display(document.querySelector("canvas"), {
         world: game.getWorld()
@@ -98,7 +114,7 @@ window.addEventListener("load", function (event) {
 
     //On key up
     var keyDownUp = function (event) {
-        p1.controller.keyDownUp(event.type, event.keyCode);
+        player1.controller.keyDownUp(event.type, event.keyCode);
     };
     //On window resize
     var resize = function (event) {

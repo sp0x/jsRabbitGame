@@ -15,6 +15,7 @@ function Player(x, y, ops) {
     this.direction_x = -1;
     this.velocity_x = 0;
     this.velocity_y = 0;
+    this.carrot_count = 0;
 
 };
 Player.prototype = {
@@ -77,18 +78,18 @@ Player.prototype = {
         let fs_right = this.frame_sets["move-right"];
         if (this.velocity_y < 0) {
 
-            if (this.direction_x < 0) this.changeFrameSet(this.frame_sets["jump-left"], "pause");
-            else this.changeFrameSet(this.frame_sets["jump-right"], "pause");
+            if (this.direction_x < 0) this.setFrameSet(this.frame_sets["jump-left"], "pause");
+            else this.setFrameSet(this.frame_sets["jump-right"], "pause");
 
         } else if (this.direction_x < 0) { //Going left
 
-            if (this.velocity_x < -0.1) this.changeFrameSet(fs_left, "loop", 5);
-            else this.changeFrameSet(this.frame_sets["idle-left"], "pause");
+            if (this.velocity_x < -0.1) this.setFrameSet(fs_left, "loop", 5);
+            else this.setFrameSet(this.frame_sets["idle-left"], "pause");
 
         } else if (this.direction_x > 0) { //Going right
 
-            if (this.velocity_x > 0.1) this.changeFrameSet(fs_right, "loop", 5);
-            else this.changeFrameSet(this.frame_sets["idle-right"], "pause");
+            if (this.velocity_x > 0.1) this.setFrameSet(fs_right, "loop", 5);
+            else this.setFrameSet(this.frame_sets["idle-right"], "pause");
 
         }
 
